@@ -1,9 +1,10 @@
 import React from 'react'
-import {Routes, Route, Navigate, useNavigate} from 'react-router-dom'
+import { useNavigate} from 'react-router-dom'
+import {Button, Segment} from 'semantic-ui-react'
 
-import About from './Components/About'
-import NavBar from './Components/NavBar'
-import PlanContainer from './Components/PlanContainer'
+// import About from './Components/About'
+// import NavBar from './Components/NavBar'
+// import PlanContainer from './Components/PlanContainer'
 
 function AppAuthenticated( {currentUser, setCurrentUser} ) {
   const navigate = useNavigate()
@@ -23,17 +24,25 @@ function AppAuthenticated( {currentUser, setCurrentUser} ) {
 
   return (
     <div>
-        <NavBar setCurrentUser={setCurrentUser} currentUser={currentUser} handleLogout={handleLogout} />
+      <div>
+          <Segment>
+            <Button inverted color='red' size='big'> 
+            Logout
+            </Button>
+          </Segment>
+        </div>
+
+        {/* <NavBar 
+        setCurrentUser={setCurrentUser} c
+        urrentUser={currentUser} 
+        handleLogout={handleLogout} 
+        /> */}
         
-        <Routes>
+        {/* <Routes>
           <Route path='/about' element={<About />} />
           <Route path='/plans' element={<PlanContainer />} />
-
-            
          <Route path='/plans' element={< Navigate to='/' /> } /> 
-          {/* <Route path='/plans' element={< Navigate to='/' /> } />  */}
-          {/* Double check that the above code is correct for a redirect */}
-        </Routes>
+        </Routes> */}
     </div>
     
   )

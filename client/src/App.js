@@ -5,6 +5,7 @@ import { BrowserRouter as Router } from 'react-router-dom'
 
 import AppAuthenticated from './AppAuthenticated';
 import AppUnauthenticated from './AppUnauthenticated';
+import NavBar from './Components/NavBar'
 import Footer from './Components/Footer';
 
 function App() {
@@ -32,9 +33,15 @@ function App() {
 
   return (
     <Router>
+
       <header className="App-header">
         Fitness Guru
       </header>
+
+      <NavBar 
+      setCurrentUser={setCurrentUser} 
+      currentUser={currentUser} 
+      />
 
       {currentUser ? (
           <AppAuthenticated

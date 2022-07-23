@@ -1,8 +1,11 @@
 import React, {useState} from 'react'
-import { NavLink } from 'react-router-dom'
-import {Button, Segment} from 'semantic-ui-react'
+import { Routes, Route, NavLink } from 'react-router-dom'
+// import {Button, Segment} from 'semantic-ui-react'
 
-export default function NavBar({ setCurrentUser, currentUser, handleLogout }) {
+import About from './About'
+import PlanContainer from './PlanContainer'
+
+function NavBar({ setCurrentUser, currentUser}) {
 
 //   fetch('/me', {
 //     method: 'PATCH',
@@ -25,16 +28,25 @@ export default function NavBar({ setCurrentUser, currentUser, handleLogout }) {
         <NavLink to='/about' > About </NavLink>
           <br/>
         <NavLink to='/plans' > Plans </NavLink>   
-          <hr/>         
 
-        <div>
+        <Routes>
+          <Route path='/about' element={<About />} />
+          <Route path='/plans' element={<PlanContainer />} />
+          {/* <Route path='/plans' element={< Navigate to='/' /> } /> */}
+         </Routes>         
+
+        {/* <div>
           <Segment>
-            <Button inverted color='red' size='big' > Logout</Button>
+            <Button inverted color='red' size='big'> 
+            Logout
+            </Button>
           </Segment>
-        </div>
+        </div> */}
 
       </div>
     </nav>
     
   )
 }
+
+export default NavBar

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link, useNavigate} from 'react-router-dom'
 
-function UserSignUp( {setCurrentUser} ) {
+function UserSignUp({ setCurrentUser }) {
 
   const navigate = useNavigate()
   const [username, setUsername] = useState('')
@@ -44,6 +44,7 @@ function UserSignUp( {setCurrentUser} ) {
         <p>
           <label>Username</label>
           <input
+            required
             type="text"
             name="username"
             value={username}
@@ -54,6 +55,7 @@ function UserSignUp( {setCurrentUser} ) {
         <p>
           <label>Password</label>
           <input
+            required
             type="password"
             name=""
             value={password}
@@ -78,5 +80,4 @@ function UserSignUp( {setCurrentUser} ) {
     </div>
   )
 }
-
 export default UserSignUp

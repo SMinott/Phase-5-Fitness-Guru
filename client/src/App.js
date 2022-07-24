@@ -1,65 +1,32 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 import './App.css';
-import { BrowserRouter as Router } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route,} from 'react-router-dom'
 
 
-import AppAuthenticated from './AppAuthenticated';
-import AppUnauthenticated from './AppUnauthenticated';
+import Home from './Components/Home'
 import NavBar from './Components/NavBar'
 import Footer from './Components/Footer';
+import About from './Components/About';
+import PlanContainer from './Components/PlanContainer';
 
 function App() {
-  const [currentUser, setCurrentUser] = useState(null)
-  const [authChecked, setAuthChecked] = useState(false)
-
-  useEffect(() => {
-    fetch('/me', 
-    //credentials = make sure to send the cookie along with the fetch request
-    {credentials: 'include'})
-      .then(res => {
-        if (res.ok) {
-          res.json().then((user) => {
-            setCurrentUser(user)
-            setAuthChecked(true)
-          })
-        } else {
-          setAuthChecked(true)
-        }
-      })
-  }, [])
-
- 
-  if(!authChecked) { return <div></div>}
 
   return (
     <Router>
 
-      <header className="App-header">
+      {/* <header className="App-header">
         Fitness Guru
-      </header>
+      </header> */}
 
-      <NavBar 
-      setCurrentUser={setCurrentUser} 
-      currentUser={currentUser} 
-      />
-
-      {currentUser ? (
-          <AppAuthenticated
-            setCurrentUser={setCurrentUser}
-            currentUser={currentUser}
-          />
-        ) : (
-          <AppUnauthenticated
-            setCurrentUser={setCurrentUser}
-          />
-        )
-      }
-      
-      {/* <AppUnauthenticated />
-      <AppAuthenticated /> */}
-       <Footer />
+      <NavBar /> 
+      <Routes>
+        {/* <Route path='/' element={<Navigate to='/home' />} /> */}
+        <Route path='/home/' element={<Home />} />
+        <Route path='/about' element={<About />} />
+        <Route path='/plans' element={<PlanContainer />} />
+      </Routes>
+      <Footer />
     </Router>   
   );
 }
-
 export default App;

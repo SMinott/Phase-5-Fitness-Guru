@@ -1,50 +1,37 @@
-import React, {useState} from 'react'
-import { Routes, Route, NavLink } from 'react-router-dom'
-// import {Button, Segment} from 'semantic-ui-react'
+import React from 'react'
+import { NavLink } from 'react-router-dom'
+import Logo from '../assets/images/Logo.png';
 
-import About from './About'
-import PlanContainer from './PlanContainer'
 
-function NavBar({ setCurrentUser, currentUser}) {
+// import About from './About'
+// import PlanContainer from './PlanContainer'
+// import Home from './Home';
 
-//   fetch('/me', {
-//     method: 'PATCH',
-//     headers: {
-//       'Content-Type': 'application/json'
-//     },
-//     body: JSON.stringify(body)
-//   })
-//     .then(res => res.json())
-//     .then(user => {
-//       console.log(user);
-//       setCurrentUser(user)
-//     })
-// }
+function NavBar(){
 
   return (
-    <nav>
-      <div>
+    // <nav>
+      <div class='ui fluid four item menu'>
 
-        <NavLink to='/about' > About </NavLink>
-          <br/>
-        <NavLink to='/plans' > Plans </NavLink>   
+        <div class="header item">
+          <h1>Fitness Guru</h1>
+          <img class="ui tiny image" src={Logo} alt='Logo' />
+        </div>
 
-        <Routes>
-          <Route path='/about' element={<About />} />
-          <Route path='/plans' element={<PlanContainer />} />
-          {/* <Route path='/plans' element={< Navigate to='/' /> } /> */}
-         </Routes>         
-
-        {/* <div>
-          <Segment>
-            <Button inverted color='red' size='big'> 
-            Logout
-            </Button>
-          </Segment>
-        </div> */}
+        <div  class='item' >
+          <NavLink to='/'> Home </NavLink>
+        </div>
+        
+        <div  class='item'>
+          <NavLink to='/about' > About </NavLink>
+        </div>
+       
+        <div class='item'>
+          <NavLink to='/plans' > Plans </NavLink>
+        </div>
 
       </div>
-    </nav>
+    // </nav>
     
   )
 }

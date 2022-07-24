@@ -3,9 +3,9 @@ import React from 'react'
 function About() {
   return (
     <div>
-      <h2>About Fitness Guru</h2>
+      <h2>About Us</h2>
       <p>My own experience has taught me that the inability to create or follow a fitness plan is necessarily due to a ack of wanting to. 
-        There have been so many times that I made up my mind to follow a specific plan,only to get sidetracked by.. well, life. I finally realized 
+        There have been so many times that I made up my mind to follow a specific plan, only to get sidetracked by... well, life. I finally realized 
         that I would have a more positive outcome if I could have a detailed plan created, receive appropriate guidance, and have someone hold 
         me accounatble, it increases the likelihood that I wold stick with a plan long term. With this in mind, I set out to create a service that 
         encompassed all that and more and Fitness Guru was bone.

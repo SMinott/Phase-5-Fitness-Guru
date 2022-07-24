@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
-function UserLogin( {setCurrentUser} ) {
+function UserLogin({ setCurrentUser }) {
 
   const navigate = useNavigate()
   const [username, setUsername] = useState('')
@@ -32,8 +32,6 @@ function UserLogin( {setCurrentUser} ) {
 
   return (
     <div>
-
-      {/* <Navigate to='/' /> */}
 
       <form onSubmit={handleSubmit} >
         <h1>Log In</h1>
@@ -67,5 +65,4 @@ function UserLogin( {setCurrentUser} ) {
     </div>
   )
 }
-
 export default UserLogin

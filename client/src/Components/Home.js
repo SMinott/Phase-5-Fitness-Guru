@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react'
-// import { BrowserRouter as Router} from 'react-router-dom'
 
 import AppAuthenticated from '../AppAuthenticated';
 import AppUnauthenticated from '../AppUnauthenticated';
@@ -28,7 +27,7 @@ function Home() {
   
     return (
       <div>
-        <h1> Should see either Auth or Unauth</h1>
+        {/* <h1> Should see either Auth or Unauth</h1> */}
   
         {currentUser ? (
             <AppAuthenticated

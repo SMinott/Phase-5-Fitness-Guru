@@ -11,10 +11,10 @@ function AppUnauthenticated( {setCurrentUser} ) {
   return (
     <Routes>
       
-        <Route path='/login' element={< UserLogin setCurrentUser={setCurrentUser} />} />
-        <Route path='/signup' element={< UserSignUp setCurrentUser={setCurrentUser} />} />
+        <Route path='/' element={< UserLogin setCurrentUser={setCurrentUser} />} />
+        <Route exact path='/signup' element={< UserSignUp setCurrentUser={setCurrentUser} />} />
+
     </Routes>
-    
   )
 }
 

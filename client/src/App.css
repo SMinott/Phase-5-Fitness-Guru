@@ -2,7 +2,7 @@
   text-align: center;
 }
 
-.App-header {
+/* .App-header {
   background-color: #282c34;
   min-height: 20vh;
   display: flex;
@@ -11,17 +11,30 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}
+} */
+
 .footer{
+  /* color: black; */
   color: white;
-  background-color: #282c34;
-
+  /* background-color: #282c34; */
+  /* background-color: rgb(225, 184, 184); */
+  background-color: rgb(30, 183, 183);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  /* border-color: black;
+  border-top-style: inset; */
 }
 
-NavLink a.active{
+/* .copy-right{
+  font-size: x-small;
+} */
+
+/* NavLink a.active{
   text-decoration: none;
   font-weight: bold;
-}
+} */
 
 /* .App-logo {
   height: 40vmin;

@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-// import {Routes, Route} from 'react-router-dom'
+import {Routes, Route} from 'react-router-dom'
 
 import PlanList from './PlanList'
 import PlanDetail from './PlanDetail'
@@ -72,19 +72,19 @@ function PlanContainer() {
 
 return (
   <div>
-    <h1> Plan Containers coming soon</h1>
-    <PlanList plans={plans} joinPlan={joinPlan} leavePlan={leavePlan}/>
-    <PlanDetail plans={plans} joinPlan={joinPlan} leavePlan={leavePlan} />
-    {/* <Routes>
-      <Route exact path="/plans">
-        <PlanList
+    <h1> Why can't I see my GD plans?!!!</h1>
+    {/* <PlanList plans={plans} joinPlan={joinPlan} leavePlan={leavePlan}/>
+    <PlanDetail plans={plans} joinPlan={joinPlan} leavePlan={leavePlan} /> */}
+
+    <Routes>
+      <Route path="/plans" element={<PlanList
           plans={plans}
           joinPlan={joinPlan}
           leavePlan={leavePlan}
-        />
+        />}>
       </Route>
 
-      <Route exact path="/plans/:id"
+      <Route path="/plans/:id"
         render={({ match }) => {
           return (
             <PlanDetail
@@ -95,7 +95,7 @@ return (
           )
         }}
       />
-    </Routes> */}
+    </Routes>
   </div>
 )
 }

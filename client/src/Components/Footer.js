@@ -1,15 +1,21 @@
 import React from 'react'
-import { Box, Stack, Typography } from '@mui/material';
-import Logo from '../assets/images/Logo.png';
+import {Container, Icon} from 'semantic-ui-react'
 
-function Footer() {
+
+function Footer({logo}) {
   return (
-     <Box className='footer'  mt="80px" bgcolor="#282c34">
-    <Stack gap="40px" sx={{ alignItems: 'center' }} flexWrap="wrap" px="40px" pt="24px">
-      <img src={Logo} alt="logo" style={{ width: '100px', height: '65px' }} />
-    </Stack>
-    <Typography variant="h5" sx={{ fontSize: { lg: '28px', xs: '20px' } }} mt="41px" textAlign="center" pb="40px">Made with ❤️ by Susan M.</Typography>
-  </Box>
+  <Container fluid textAlign='center' className='footer'>
+    
+    <img src={logo} alt="logo" />
+    <p>Made with ❤️ by Susan M.</p>
+    {/* <p className='copy-right'>&#169; 2022 GURU FITNESS LLC ALL RIGHT RESERVED</p> */}
+    <Icon name='copyright'/> 2022 GURU FITNESS LLC ALL RIGHT RESERVED
+    <br />
+    <Icon name='twitter' link bordered circular inverted color='teal'/>
+    <Icon name='facebook' link bordered circular inverted color='teal'/>
+    <Icon name='instagram' link bordered circular inverted color='teal'/>
+    
+  </Container>
   )
 }
 

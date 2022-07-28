@@ -3,9 +3,7 @@ import { Divider, Header, Segment } from 'semantic-ui-react'
 
 function About() {
   return (
-    <div>      
-
-    <Segment>
+    <Segment inverted size='large'>
       <Header as='h3' size='huge'>About Us</Header>
       <p>My own experience has taught me that the inability to create or follow a fitness plan is necessarily due to a ack of wanting to. 
         There have been so many times that I made up my mind to follow a specific plan, only to get sidetracked by... well, life. I finally realized 
@@ -31,7 +29,6 @@ function About() {
       <p>Inclusivity and positivity.</p>
 
     </Segment>
-    </div>
     
   )
 }

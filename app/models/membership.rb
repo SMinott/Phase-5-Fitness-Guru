@@ -11,6 +11,4 @@ class Membership < ApplicationRecord
     Please contact customer service at 800-800-1234 for 
     plan adjustments"
   }
-
-  
 end

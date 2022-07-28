@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Link, useNavigate} from 'react-router-dom'
+import { Button, Form, Grid, Header, Message, Segment } from 'semantic-ui-react'
 
 function UserSignUp({ setCurrentUser }) {
 
@@ -36,48 +37,79 @@ function UserSignUp({ setCurrentUser }) {
   }
 
   return (
-    <div>
-      <form onSubmit={handleSubmit} >
+    <Grid>
+      <Grid.Column>
+        <form onSubmit={handleSubmit} >
+          <Segment>
+            <Header as='h1' color='teal' textAlign='center' dividing>
+              Sign Up
+            </Header>
 
-        <h1>Sign Up</h1>
-        
-        <p>
-          <label>Username</label>
-          <input
-            required
-            type="text"
-            name="username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
-        </p>
+            <Form.Input fluid icon='user' iconPosition='left' placeholder='Username'
+                type='text'
+                name='username'
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+              />
+               <Form.Input fluid icon='lock' iconPosition='left' placeholder='Password'
+                type='password'
+                name=''
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+               <Form.Input fluid icon='lock' iconPosition='left' placeholder='Confirm Password'
+                type='password'
+                name='password_confirmation'
+                value={passwordConfirmation}
+                onChange={(e) => setPasswordConfirmation(e.target.value)}
+              />
 
-        <p>
-          <label>Password</label>
-          <input
-            required
-            type="password"
-            name=""
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </p>
+              <Button color='teal' fluid size='large' type="submit">
+                Sign Up
+              </Button>
 
-        <p>
-          <label>Password Confirmation</label>
-          <input
-            type="password"
-            name="password_confirmation"
-            value={passwordConfirmation}
-            onChange={(e) => setPasswordConfirmation(e.target.value)}
-          />
-        </p>
+              <Message size='large'>             
+                Already a member? <Link to="/">Login</Link>
+              </Message>
+            
+            {/* <p>
+              <label>Username</label>
+              <input
+                required
+                type="text"
+                name="username"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+              />
+            </p>
 
-        <p><button type="submit">Sign Up</button></p>
-        <p >-- or --</p>
-        <p ><Link to="/login">Log In</Link></p>
-      </form>
-    </div>
+            <p>
+              <label>Password</label>
+              <input
+                required
+                type="password"
+                name=""
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </p>
+
+            <p>
+              <label>Password Confirmation</label>
+              <input
+                type="password"
+                name="password_confirmation"
+                value={passwordConfirmation}
+                onChange={(e) => setPasswordConfirmation(e.target.value)}
+              />
+            </p>
+            <p >-- or --</p>
+            <p ><Link to="/login">Log In</Link></p> */}
+
+          </Segment>
+        </form>
+      </Grid.Column>
+    </Grid>
   )
 }
 export default UserSignUp

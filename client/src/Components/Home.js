@@ -10,6 +10,7 @@ function Home() {
     useEffect(() => {
       fetch('/me', 
       //credentials = make sure to send the cookie along with the fetch request
+      //Is a part of JS
       {credentials: 'include'})
         .then(res => {
           if (res.ok) {

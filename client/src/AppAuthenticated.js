@@ -1,43 +1,32 @@
 import React from 'react'
-// import { useNavigate} from 'react-router-dom'
+import { useNavigate} from 'react-router-dom'
 import {Button, Segment} from 'semantic-ui-react'
 
 function AppAuthenticated( {currentUser, setCurrentUser} ) {
-  // const navigate = useNavigate()
+  const navigate = useNavigate()
 
-  //handleLogout & fetch moved from NavBar
-  //   fetch('/me', {
-  //   method: 'PATCH',
-  //   headers: {
-  //     'Content-Type': 'application/json'
-  //   },
-  //   body: JSON.stringify()
-  // })
-  //   .then(res => res.json())
-  //   .then(user => {
-  //     console.log(user);
-  //     setCurrentUser(user)
-  //   })
-
-  // const handleLogout = () => {
-  //   fetch(`/logout`, {
-  //     method: 'DELETE',
-  //     credentials: 'include'
-  //   })
-  //     .then(res => {
-  //       if (res.ok) {
-  //         setCurrentUser(null)
-  //         navigate('/')
-  //       }
-  //     })
-  // }
+  const handleLogout = () => {
+    fetch(`/logout`, {
+      method: 'DELETE',
+      credentials: 'include'
+    })
+      .then(res => {
+        if (res.ok) {
+          setCurrentUser(null)
+          navigate('/')
+        }
+      })
+  }
 
   return (
-    <div>
+    <div className='appAuth'>
       <div>
-        <h1>AppAuthenticated</h1>
+        <h1>AppAuthenticated: Need to build this out</h1>
+          <p>I want user to be able to see (1)their plan detail, (2)workout videos, (3) promotions, etc</p>
+
+
           <Segment>
-            <Button inverted color='red' size='big'> 
+            <Button negative size='small' onClick={handleLogout}> 
             Logout
             </Button>
           </Segment>

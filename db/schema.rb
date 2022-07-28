@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_07_16_232032) do
+ActiveRecord::Schema[7.0].define(version: 2022_07_27_165525) do
   create_table "memberships", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "plan_id", null: false
@@ -46,6 +46,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_16_232032) do
     t.string "profile_image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "password_digest"
+    t.boolean "admin"
   end
 
   add_foreign_key "memberships", "plans"

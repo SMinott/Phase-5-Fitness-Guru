@@ -24,16 +24,22 @@ function PlanList({ plans, joinPlan, leavePlan }) {
   // }
 
   return (
-    <div>
+    <div className='plan-list'>
 
-      <h1 >Groups</h1>
+      <h1 >Plans</h1>
       <div >
         {plans.map(plan => (
           <p>
-            <Link to={`plans/${plan.id}`}>{plan.name}</Link> 
+            <Link to={`plans/${plan.id}`}>
+              {plan.name}
+            </Link>
+            {plan.description}
+            ${plan.fee}/monthly
             <span>{leaveOrJoinButton(plan)}</span>
           </p>
+          
         ))}
+        
       </div>
 
     </div>

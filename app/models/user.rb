@@ -9,18 +9,21 @@ class User < ApplicationRecord
 
     has_many :plans, through: :memberships
 
-    validates :firstname, presence: true
-    validates :lastname, presence: true
-    validates :gender, presence: true
-    validates :age, presence: true
-    validates :email, presence: true
-    validates :username, presence: true
-    validates :city, presence: true
-    validates :state, presence: true
-    validates :height, presence: true
-    validates :weight, presence: true
-    validates :fitness_level, presence: true
-    validates :goal1, presence: true
+    #This is a built-in macro for authenticate, password & password_confirmation
+    has_secure_password
+
+    # validates :firstname, presence: true
+    # validates :lastname, presence: true
+    # validates :gender, presence: true
+    # validates :age, presence: true
+    validates :email, presence: true, uniqueness: true
+    validates :username, presence: true, uniqueness: true
+    # validates :city, presence: true
+    # validates :state, presence: true
+    # validates :height, presence: true
+    # validates :weight, presence: true
+    # validates :fitness_level, presence: true
+    # validates :goal1, presence: true
 
    
 end

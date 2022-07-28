@@ -11,7 +11,7 @@ function PlanContainer() {
 
   useEffect(() => {
     fetch('/plans', 
-    // {credentials: 'include'}
+    {credentials: 'include'}
     )
     .then(r => r.json())
     // .then(plans => console.log(plans))
@@ -22,7 +22,7 @@ function PlanContainer() {
     return fetch ('/memberships', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
-      // credentials: 'include',
+      credentials: 'include',
       body: JSON.stringify({plan_id: planId})
     })
       .then(res => {
@@ -33,7 +33,7 @@ function PlanContainer() {
         }
       })
       .then(membership => {
-        const updatedPlans = plans.map(plan => {
+        const updatedPlans = [plans]?.map(plan => {
           if (plan.id === planId) {
             return {
               ...plan,
@@ -51,7 +51,7 @@ function PlanContainer() {
     let membership = plans.find(plan => plan.id === planId).membership.id
     return fetch(`/memberships/${membership}`, {
       method: 'DELETE',
-      // credentials: 'include'
+      credentials: 'include'
     })
       .then(res => {
         if (res.ok) {
@@ -72,11 +72,11 @@ function PlanContainer() {
 
 return (
   <div>
-    <h1> Why can't I see my GD plans?!!!</h1>
-    {/* <PlanList plans={plans} joinPlan={joinPlan} leavePlan={leavePlan}/>
-    <PlanDetail plans={plans} joinPlan={joinPlan} leavePlan={leavePlan} /> */}
+   
+    <PlanList key={plans.id} plans={plans} joinPlan={joinPlan} leavePlan={leavePlan}/>
+    <PlanDetail key={plans.id} plans={plans} joinPlan={joinPlan} leavePlan={leavePlan} />
 
-    <Routes>
+    {/* <Routes>
       <Route path="/plans" element={<PlanList
           plans={plans}
           joinPlan={joinPlan}
@@ -95,7 +95,7 @@ return (
           )
         }}
       />
-    </Routes>
+    </Routes> */}
   </div>
 )
 }

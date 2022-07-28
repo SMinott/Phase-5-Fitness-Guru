@@ -7,22 +7,22 @@ function NavBar({logo}){
     <nav>
       <div class='ui fluid four item menu'>
    
-        <div class="header item">
+        <span class="header item">
           <h1>Fitness Guru</h1>
           <img class="ui tiny image" src={logo} alt='Logo' />
-        </div>
+        </span>
 
-        <div  class='item' >
+        <span  class='item' >
           <NavLink to='/home'> Home </NavLink>
-        </div>
+        </span>
         
-        <div  class='item'>
+        <span  class='item'>
           <NavLink to='/about' > About </NavLink>
-        </div>
+        </span>
        
-        <div class='item'>
+        <span class='item'>
           <NavLink to='/plans' > Plans </NavLink>
-        </div>
+        </span>
   
       </div>
     </nav>

@@ -33,15 +33,15 @@ function UserLogin({ setCurrentUser }) {
 
   return (
    
-      <Grid textAlign='center' style={{ height: '50vh' }} verticalAlign='middle'>
-        <Grid.Column style={{ maxWidth: 650 }}>
+      <Grid textAlign='left' style={{ height: '60vh' }} verticalAlign='middle'>
+        <Grid.Column style={{ maxWidth: 500 }}>
           
 
           <Form size='large' onSubmit={handleSubmit} >
 
             <Segment stacked>
               
-              <Header as='h1' color='teal' textAlign='center' dividing>
+              <Header as='h2' textAlign='center' dividing>
                 Log In
               </Header>
 
@@ -54,15 +54,15 @@ function UserLogin({ setCurrentUser }) {
               <Form.Input fluid icon='lock' iconPosition='left' placeholder='Password'
                 type='password'
                 name='username'
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
               />
 
-              <Button color='teal' fluid size='large'>
+              <Button color='black' fluid size='large' type='submit'>
                 Login
               </Button>
 
-              <Message size='large'>             
+              <Message as='h1' size='large'>             
                 New to us? <Link to="/signup">Sign Up</Link>
               </Message>
 

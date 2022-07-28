@@ -39,7 +39,7 @@ function PlanDetail({ planId, joinPlan, leavePlan }) {
   if(!plan){ return <div></div>}
 
   return (
-    <div>
+    <div className='plan-detail'>
       
       <h1 >{plan.name}</h1>
       {leaveOrJoinButton(plan)}

@@ -1,17 +1,26 @@
 class UsersController < ApplicationController
-    before_action :user_find, except: [:index, :create]
+    before_action :user_find, except: [:index, :create, :show]
+    skip_before_action :authenticate_user, only: [:index, :create]
 
     def index
         users = User.all
         render json: users, status: :ok
     end
 
+    #GET/me
     def show
-        render json: user_find, status: :ok
+        # render json: user_find, status: :ok
+        if current_user
+            render json: current_user, status: :ok
+        else
+            render json: { errors: "No active session" }, status: :unauthorized
+        end
     end
 
+    #POST/signup
     def create
         user = User.create!(user_params)
+        session[:user_id] = user.id
         render json: user, status: :created
     end
 
@@ -28,7 +37,8 @@ class UsersController < ApplicationController
     private
 
     def user_params
-        params.permit(:firstname, :lastname, :gender, :age, :email, :username, :city, :state, :height, :weight, :fitness_level, :goal1, :goal2, :bio, :profile_image )
+        # params.permit(:firstname, :lastname, :gender, :age, :email, :username, :city, :state, :height, :weight, :fitness_level, :goal1, :goal2, :bio, :profile_image )
+        params.permit(:username, :password, :password_confirmation)
     end
 
     def user_find

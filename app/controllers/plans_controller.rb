@@ -1,5 +1,6 @@
 class PlansController < ApplicationController
     before_action :plan_find, except: [:index, :create]
+    skip_before_action :authenticate_user, only: [:index]
 
     def index
         plans = Plan.all

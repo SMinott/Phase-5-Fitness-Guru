@@ -1,5 +1,7 @@
 class MembershipsController < ApplicationController
-    before_action :membership_find, except: [:index, :create]
+    before_action :membership_find, only: [:destroy]
+    before_action :authorize_user, only: [:destroy]
+
 
     def index
         memberships = Membership.all
@@ -34,6 +36,10 @@ class MembershipsController < ApplicationController
     end
 
     def membership_find
-        Membership.find_by!(id: params[:id])
+        @membership = Membership.find(params[:id])
     end
+    def authorize_user
+        return if current_user.admin? || @membership.user == current_user
+        render json: { errors: "You are not permitted to perform that action." }, status: :forbidden
+      end
 end

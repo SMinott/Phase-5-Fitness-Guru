@@ -37,11 +37,11 @@ function UserSignUp({ setCurrentUser }) {
   }
 
   return (
-    <Grid>
-      <Grid.Column>
+    <Grid textAlign='left' style={{ height: '60vh' }} verticalAlign='middle'>
+      <Grid.Column style={{ maxWidth: 350 }}>
         <form onSubmit={handleSubmit} >
           <Segment>
-            <Header as='h1' color='teal' textAlign='center' dividing>
+            <Header as='h1' color='black' textAlign='center' dividing>
               Sign Up
             </Header>
 
@@ -56,20 +56,22 @@ function UserSignUp({ setCurrentUser }) {
                 name=''
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
+                autoComplete='on'
               />
                <Form.Input fluid icon='lock' iconPosition='left' placeholder='Confirm Password'
                 type='password'
                 name='password_confirmation'
                 value={passwordConfirmation}
                 onChange={(e) => setPasswordConfirmation(e.target.value)}
+                autoComplete='on'
               />
 
-              <Button color='teal' fluid size='large' type="submit">
+              <Button color='black' fluid size='large' type="submit">
                 Sign Up
               </Button>
 
               <Message size='large'>             
-                Already a member? <Link to="/">Login</Link>
+                Already a member? <Link to="/"> <strong>LOGIN</strong> </Link>
               </Message>
             
             {/* <p>

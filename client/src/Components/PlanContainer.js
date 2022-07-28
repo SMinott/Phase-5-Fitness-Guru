@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import {Routes, Route} from 'react-router-dom'
+// import {Routes, Route} from 'react-router-dom'
 
 import PlanList from './PlanList'
 import PlanDetail from './PlanDetail'
@@ -33,7 +33,7 @@ function PlanContainer() {
         }
       })
       .then(membership => {
-        const updatedPlans = [plans]?.map(plan => {
+        const updatedPlans = plans.map(plan => {
           if (plan.id === planId) {
             return {
               ...plan,
@@ -74,7 +74,7 @@ return (
   <div>
    
     <PlanList key={plans.id} plans={plans} joinPlan={joinPlan} leavePlan={leavePlan}/>
-    <PlanDetail key={plans.id} plans={plans} joinPlan={joinPlan} leavePlan={leavePlan} />
+    {/* <PlanDetail key={plans.id} plans={plans} joinPlan={joinPlan} leavePlan={leavePlan} /> */}
 
     {/* <Routes>
       <Route path="/plans" element={<PlanList

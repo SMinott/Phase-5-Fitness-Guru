@@ -1,6 +1,7 @@
 import React from 'react'
 import { useNavigate} from 'react-router-dom'
-import {Button, Segment} from 'semantic-ui-react'
+import {Button, Icon} from 'semantic-ui-react'
+import PlanContainer from './Components/PlanContainer'
 
 function AppAuthenticated( {currentUser, setCurrentUser} ) {
   const navigate = useNavigate()
@@ -21,15 +22,13 @@ function AppAuthenticated( {currentUser, setCurrentUser} ) {
   return (
     <div className='appAuth'>
       <div>
-        <h1>AppAuthenticated: Need to build this out</h1>
-          <p>I want user to be able to see (1)their plan detail, (2)workout videos, (3) promotions, etc</p>
+       
+          <p>I want user to be able to see (1)only their plan detail, (2)workout videos, (3) promotions, etc</p>
 
-
-          <Segment>
             <Button negative size='small' onClick={handleLogout}> 
+            <Icon name='logout'/>
             Logout
             </Button>
-          </Segment>
         </div>
  {/* This NavBar component should probably be UserLogout */}
         {/* <NavBar 

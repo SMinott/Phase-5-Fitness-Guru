@@ -34,7 +34,7 @@ function UserLogin({ setCurrentUser }) {
   return (
    
       <Grid textAlign='left' style={{ height: '60vh' }} verticalAlign='middle'>
-        <Grid.Column style={{ maxWidth: 500 }}>
+        <Grid.Column style={{ maxWidth: 350 }}>
           
 
           <Form size='large' onSubmit={handleSubmit} >
@@ -42,7 +42,7 @@ function UserLogin({ setCurrentUser }) {
             <Segment stacked>
               
               <Header as='h2' textAlign='center' dividing>
-                Log In
+                Member LogIn
               </Header>
 
               <Form.Input fluid icon='user' iconPosition='left' placeholder='Username'
@@ -56,42 +56,17 @@ function UserLogin({ setCurrentUser }) {
                 name='username'
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
+                autoComplete='on'
               />
 
               <Button color='black' fluid size='large' type='submit'>
                 Login
               </Button>
 
-              <Message as='h1' size='large'>             
-                New to us? <Link to="/signup">Sign Up</Link>
+              <Message size='large'>             
+                Not a member yet? <Link to="/signup"> <strong>Sign up now!</strong> </Link>
               </Message>
 
-           
-              {/* <p>
-                <label>Username</label>
-                <input
-                type='text'
-                name='username'
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-                >
-                </input>
-              </p> */}
-                
-              {/* <p>
-                <label>Password</label>
-                <input
-                  type='password'
-                  name=''
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}     
-                >
-                </input>
-              </p> */}
-
-              {/* <p><button type="submit">Log In</button></p> */}
-              {/* <p >-- or --</p> */}
-             
             </Segment>
           
           </Form>

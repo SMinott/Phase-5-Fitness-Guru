@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useCallback } from 'react'
 
-function PlanDetail({ planId, joinPlan, leavePlan }) {
+function PlanDetail({ planId, joinPlan, leavePlan, plans}) {
 
   const [plan, setPlan] = useState(null)
+  const {name, description, fee} = plans
 
   const fetchPlanCallback = useCallback(() => {
     fetch(`/plans/${planId}`, {
@@ -41,13 +42,19 @@ function PlanDetail({ planId, joinPlan, leavePlan }) {
   return (
     <div className='plan-detail'>
       
+      <h2>Plan Details</h2>
+      
       <h1 >{plan.name}</h1>
-      {leaveOrJoinButton(plan)}
+      <div> {plan.description}</div>
+      <div>${plan.fee}/monthly</div>
 
-      <h2>Members</h2>
+      {leaveOrJoinButton(plan)}
+      
+
+      {/* <h2>Members</h2>
       <ul>
         {plan.members?.map(member => <li>{member.username}</li>)}
-      </ul>
+      </ul> */}
 
     </div>
   )

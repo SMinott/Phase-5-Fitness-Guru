@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { Item, Card } from 'semantic-ui-react'
+import logo from '../assets/images/Logo.png'
 
 function PlanList({ plans, joinPlan, leavePlan }) {
 
@@ -26,17 +28,36 @@ function PlanList({ plans, joinPlan, leavePlan }) {
   return (
     <div className='plan-list'>
 
-      <h1 >Plans</h1>
+      <h2 >Plans</h2>
       <div >
         {plans.map(plan => (
-          <p>
-            <Link to={`plans/${plan.id}`}>
-              {plan.name}
-            </Link>
-            {plan.description}
-            ${plan.fee}/monthly
+          <Item.Group>
+            <Item>
+              <Item.Image size='tiny' src={logo} />
+              <Item.Content>
+                <Item.Header>
+                <Link to={`plans/${plan.id}`} key={plan.id}>
+                  {plan.name}
+                </Link>
+                </Item.Header>
+                <Item.Meta>
+                  Description:
+                </Item.Meta>
+                <Item.Description>
+                  <p>{plan.description}</p>
+                </Item.Description>
+                <Item.Extra>
+                  Additional Details:
+                  <p>${plan.fee}/monthly</p>
+                </Item.Extra>
+              </Item.Content>
+              
+            </Item>
+           
             <span>{leaveOrJoinButton(plan)}</span>
-          </p>
+          </Item.Group>
+
+         
           
         ))}
         

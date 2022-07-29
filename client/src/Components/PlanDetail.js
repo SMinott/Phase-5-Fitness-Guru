@@ -3,7 +3,7 @@ import React, { useState, useEffect, useCallback } from 'react'
 function PlanDetail({ planId, joinPlan, leavePlan, plans}) {
 
   const [plan, setPlan] = useState(null)
-  const {name, description, fee} = plans
+  // const {name, description, fee} = plans
 
   const fetchPlanCallback = useCallback(() => {
     fetch(`/plans/${planId}`, {

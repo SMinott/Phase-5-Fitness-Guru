@@ -2,7 +2,6 @@ import React from 'react'
 import './App.css';
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import Logo from './assets/images/Logo4.jpeg';
-import Background from './assets/images/background.jpeg'
 
 import NavBar from './Components/NavBar'
 import About from './Components/About'
@@ -29,7 +28,7 @@ function App() {
             <Route path='/signup' element={<UserSignUp />} /> */}
           </Routes>
         </Router>
-        <Footer logo={Logo} /> 
+        <Footer /> 
      </div>     
     </section>
   );

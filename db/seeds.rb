@@ -3,7 +3,7 @@ puts 'SEED IN PROGRESS!!!'
 user1 = User.create!(
     firstname: "Tina",
     lastname: 'Snow',
-    gender: 'female',
+    gender: 'F',
     age: 23,
     email: 'tsnow@eamil.com',
     username:'tsnow',
@@ -15,14 +15,14 @@ user1 = User.create!(
     goal1: 'Be able to do 10 pullups',
     goal2: 'Be able to run 2 miles in 14 minutes or less',
     bio: 'My level of fitness has deteriorated since leaving the military.  I would like to be able to meet the standards to pass the Army pt test',
-    profile_image: 'http://capitolmed.com/our-team/',
+    profile_image: 'https://etcanada.com/wp-content/uploads/2022/05/CP24538347.jpg?quality=80&strip=all&w=450&h=300&crop=1',
     password: 'password',
     admin: true
 )
 user2 = User.create!(
     firstname: "Henry",
     lastname: "Windsor",
-    gender: "male",
+    gender: "M",
     age: "37",
     email: "hwindsor@email.com",
     username: "hwindsor",
@@ -34,7 +34,7 @@ user2 = User.create!(
     goal1: "Increase muscle mass while cutting fat",
     goal2: "Improve diet",
     bio: "Lead a very busy life as a philanthropist with very young children",
-    profile_image: "http://capitolmed.com/our-team/",
+    profile_image: "https://pbs.twimg.com/profile_images/1273592666207531008/ojN2Wrad_400x400.jpg",
     password: 'password',
     admin: false
 )
@@ -44,7 +44,7 @@ user3 = User.create!(
     gender: "F",
     age: "27",
     email: "rfenty@email.com",
-    username: "RFenty",
+    username: "rfenty",
     city: "Los Angeles",
     state: "CA",
     height: 68,
@@ -53,7 +53,7 @@ user3 = User.create!(
     goal1: "Weight loss",
     goal2: "Improve ensurance",
     bio: "I just had a baby, so I need help getiing back in shape for my future tour.",
-    profile_image: "http://capitolmed.com/our-team/",
+    profile_image: "http://saalhzia.weebly.com/uploads/2/7/3/6/27364435/9076197_orig.jpeg",
     password: 'password',
     admin: false
 )
@@ -63,7 +63,7 @@ user4 = User.create!(
     gender: "F",
     age: "37",
     email: "bknowles@email.com",
-    username: "BKnowles",
+    username: "bknowles",
     city: "Los Angeles",
     state: "CA",
     height: 67,
@@ -72,7 +72,7 @@ user4 = User.create!(
     goal1: "To maintain current level",
     goal2: "",
     bio: "I need to remainin tip top shape at all times.",
-    profile_image: "http://capitolmed.com/our-team/",
+    profile_image: "https://failurebeforesuccess.com/wp-content/uploads/2021/07/beyonce-human.jpg",
     password: 'password',
     admin: false
 )

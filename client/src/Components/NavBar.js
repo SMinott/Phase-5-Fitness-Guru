@@ -1,9 +1,8 @@
-import React, {useState} from 'react'
+import React from 'react'
 // import AppCss from '../App.css'
 import { NavLink} from 'react-router-dom'
 
 function NavBar({logo}){
-  const[showLinks, setShowLinks] = useState(false)
 
   return (
     <nav>
@@ -17,9 +16,9 @@ function NavBar({logo}){
         <div className='right-side'>
           <div className='right-side-links'>
             <a href='/home'> Home </a>
-            <a href='/about'> About Us </a>
-            <a href='/plans'> Fitness Plans </a>
-            <button>Open</button>
+            <a href='/about'> About </a>
+            <a href='/plans'> Plans </a>
+            {/* <button>Open</button> */}
           </div>
         </div>
        

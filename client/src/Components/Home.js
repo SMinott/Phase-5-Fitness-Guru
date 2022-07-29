@@ -28,7 +28,6 @@ function Home() {
   
     return (
       <div>
-        {/* <h1> Should see either Auth or Unauth</h1> */}
   
         {currentUser ? (
             <AppAuthenticated

@@ -9,12 +9,12 @@ import UserLogin from './Components/UserLogin'
 
 function AppUnauthenticated( {setCurrentUser} ) {
   return (
+    <div>
     <Routes>
-      
         <Route path='/' element={< UserLogin setCurrentUser={setCurrentUser} />} />
         <Route exact path='/signup' element={< UserSignUp setCurrentUser={setCurrentUser} />} />
-
     </Routes>
+    </div>
   )
 }
 

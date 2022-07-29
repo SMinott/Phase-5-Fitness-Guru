@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react'
 // import {Routes, Route} from 'react-router-dom'
 
 import PlanList from './PlanList'
-import PlanDetail from './PlanDetail'
+// import PlanDetail from './PlanDetail'
 
 
 function PlanContainer() {

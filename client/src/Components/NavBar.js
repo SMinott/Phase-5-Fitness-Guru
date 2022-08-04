@@ -1,5 +1,4 @@
 import React from 'react'
-// import AppCss from '../App.css'
 import { NavLink} from 'react-router-dom'
 
 function NavBar({logo}){

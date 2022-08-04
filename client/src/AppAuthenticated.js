@@ -4,6 +4,7 @@ import {Button, Icon} from 'semantic-ui-react'
 
 import UserProfile from './Components/UserProfile'
 
+
 function AppAuthenticated( {currentUser, setCurrentUser} ) {
   const navigate = useNavigate()
 

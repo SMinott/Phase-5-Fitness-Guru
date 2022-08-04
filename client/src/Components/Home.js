@@ -27,8 +27,7 @@ function Home() {
     if(!authChecked) { return <div></div>}
   
     return (
-      <div>
-  
+      <div>  
         {currentUser ? (
             <AppAuthenticated
               setCurrentUser={setCurrentUser}
@@ -37,7 +36,7 @@ function Home() {
           ) : (
             <AppUnauthenticated
               setCurrentUser={setCurrentUser}
-            />
+            /> 
           )
         } 
       </div>   

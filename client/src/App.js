@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import './App.css';
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import Logo from './assets/images/Logo4.jpeg';
@@ -10,23 +10,38 @@ import Home from './Components/Home';
 import Footer from './Components/Footer'
 // import UserLogin from './Components/UserLogin';
 // import UserSignUp from './Components/UserSignUp';
+import ExerciseDetail from './Components/APIs/ExerciseCard';
+import SearchExercises from './Components/APIs/SearchExercises';
+import Exercises from './Components/APIs/Exercises';
 
 function App() {
+  const[exercises, setExercises] = useState([])
+  const[bodyPart, setBodyPart] = useState('all')
 
   return (
     <section id='app-container'>
-      
 
       <div className='app-content'>
       <NavBar logo={Logo} />
-        <Router>
+      <Router>
           <Routes>
             <Route path='/home/*' element={<Home />} />
             <Route path='/about' element={<About />} />
             <Route path='/plans' element={<PlanContainer />} />
-            {/* <Route path='/' element={<UserLogin />} />
-            <Route path='/signup' element={<UserSignUp />} /> */}
+            {/* <Route path='/' element={<UserLogin />} /> */}
+            {/* <Route path='/signup' element={<UserSignUp />} /> */}
+            <Route path='/exercise/:id' element={<ExerciseDetail />} />
           </Routes>
+          <SearchExercises 
+            setExercises={setExercises} 
+            bodyPart={bodyPart} 
+            setBodyPart={setBodyPart} 
+          />
+          <Exercises
+            exercises={exercises}
+            setExercises={setExercises} 
+            bodyPart={bodyPart} 
+          />
         </Router>
         <Footer /> 
      </div>     

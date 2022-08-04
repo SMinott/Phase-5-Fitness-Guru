@@ -21,7 +21,7 @@ function UserLogin({ setCurrentUser }) {
         if (res.ok) {
           res.json().then(user => {
             setCurrentUser(user)
-            navigate('/plans')
+            navigate('/home')
           })
         } else {
           res.json().then(errors => {

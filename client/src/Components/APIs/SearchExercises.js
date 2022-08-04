@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import { Button } from 'semantic-ui-react'
+import { Button, Segment, Icon, Header } from 'semantic-ui-react'
 import { fetchData, options } from '../../Utils/FetchData'
 import HorizontalScrollbar from './HorizontalScrollbar'
 
@@ -49,8 +49,11 @@ export default function SearchExercises( {bodyPart, setBodyPart, setExercises}) 
     }
 
   return (
-    <div className='search'>
-      <h1>SEARCH COMP</h1>
+    <Segment className='search' placeholder>
+      {/* <Header> */}
+        {/* <Icon name='search'></Icon> */}
+      {/* </Header> */}
+      <h1>Search for Exercises</h1>
       <input
       type='search'
       name=''
@@ -65,6 +68,6 @@ export default function SearchExercises( {bodyPart, setBodyPart, setExercises}) 
       <div>
         <HorizontalScrollbar data={bodyParts} bodyPart={bodyPart} setBodyPart={setBodyPart} />
       </div>
-    </div>
+    </Segment>
   )
 }

@@ -165,10 +165,16 @@ margin-left: 15px;
   text-transform: capitalize;
 }
 
-#exercise-list{
-  /* direction: row;
-  flex-wrap: wrap;
-  justify-content: center; */
+#exercise-btn{
+  text-transform: capitalize;
+  border-radius: 20px;
+}
+
+#exercise-span{
+  text-transform: capitalize;
+  font-weight: bold;
+  font-size: 22px;
+  text-align: center;
 }
 
 /* .App-header {

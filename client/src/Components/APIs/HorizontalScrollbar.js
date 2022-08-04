@@ -4,12 +4,10 @@ import BodyPart from './BodyPart'
 
 function HorizontalScrollbar({data, bodyPart, setBodyPart}) {
 
-    console.log(data)
+    // console.log(data)
 
   return (
     <ScrollMenu className='horizontal-scrollbar'>
-
-      <h1>HORIZONTAL SCROLLBAR COMP</h1>
 
         {data.map((item) => ( 
             <BodyPart  

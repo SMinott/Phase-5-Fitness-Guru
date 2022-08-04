@@ -10,13 +10,14 @@ import Home from './Components/Home';
 import Footer from './Components/Footer'
 // import UserLogin from './Components/UserLogin';
 // import UserSignUp from './Components/UserSignUp';
-import ExerciseDetail from './Components/APIs/ExerciseCard';
+import ExerciseCard from './Components/APIs/ExerciseCard';
 import SearchExercises from './Components/APIs/SearchExercises';
 import Exercises from './Components/APIs/Exercises';
 
 function App() {
   const[exercises, setExercises] = useState([])
-  const[bodyPart, setBodyPart] = useState('all')
+  const[bodyPart, setBodyPart] = useState('')
+  console.log(bodyPart)
 
   return (
     <section id='app-container'>
@@ -30,8 +31,9 @@ function App() {
             <Route path='/plans' element={<PlanContainer />} />
             {/* <Route path='/' element={<UserLogin />} /> */}
             {/* <Route path='/signup' element={<UserSignUp />} /> */}
-            <Route path='/exercise/:id' element={<ExerciseDetail />} />
+            {/* <Route path='/exercise/:id' element={<ExerciseCard />} /> */}
           </Routes>
+
           <SearchExercises 
             setExercises={setExercises} 
             bodyPart={bodyPart} 

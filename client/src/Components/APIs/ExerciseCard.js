@@ -20,7 +20,7 @@ function ExerciseCard({exercise}) {
         <Image src={exercise.gifUrl} alt={exercise.name} loading='lazy' ></Image>
         
         <Button id='exercise-btn' primary size='large' > Body Part: {exercise.bodyPart} </Button>
-        <Button id='exercise-btn' secondary size='large' > Target:  {exercise.target} </Button>
+        <Button id='exercise-btn' secondary size='large' > Target Muscle:  {exercise.target} </Button>
         </Segment>
       </Grid.Column>
       {/* </Grid.Row> */}

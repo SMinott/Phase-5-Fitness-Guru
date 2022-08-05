@@ -17,7 +17,7 @@ import Exercises from './Components/APIs/Exercises';
 function App() {
   const[exercises, setExercises] = useState([])
   const[bodyPart, setBodyPart] = useState('')
-  console.log(bodyPart)
+  // console.log(bodyPart)
 
   return (
     <section id='app-container'>

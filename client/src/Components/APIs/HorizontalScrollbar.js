@@ -15,7 +15,7 @@ function HorizontalScrollbar({data, bodyPart, setBodyPart}) {
             itemID={item.id || item}
             title={item.id || item}
             item={item}
-            />)
+            setBodyPart={setBodyPart}/>)
         )}
 
     </ScrollMenu>

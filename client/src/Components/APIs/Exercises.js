@@ -12,6 +12,22 @@ function Exercises({exercises, setExercises, bodyPart}) {
   //   setCurrentPage(e);
   //   window.scrollTo({top: 1800, behavior:'smooth'})
   // }
+
+  useEffect(() => {
+    const fetchExercisesData = async () => {
+      let exercisesData = [];
+
+      if (bodyPart === 'all') {
+        exercisesData = await fetchData('https://exercisedb.p.rapidapi.com/exercises', options);
+      } else {
+        exercisesData = await fetchData(`https://exercisedb.p.rapidapi.com/exercises/bodyPart/${bodyPart}`, options);
+      }
+
+      setExercises(exercisesData);
+    };
+
+    fetchExercisesData();
+  }, [bodyPart]);
   
   return (
     <div className='exercises'>
